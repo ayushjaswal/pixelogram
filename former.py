@@ -5,11 +5,12 @@ from fetcher import Fetcher
 
 
 class Former():
-    def __init__(self):
-        pass
+    def __init__(self, style):
+        self.style = style
 
 
-    def pixelate_image(self,image_path, pixel_factor_size=5, threshold=64):
+    def pixelate_image(self,image_path, pixel_factor_size=4, threshold=188):
+
         """ This function downsize (pixelate) the loaded image
             It works this by encompassing the 
 
@@ -36,8 +37,10 @@ class Former():
 
 if __name__ == "__main__":
     image_path = input("Image path: ")
+    style_ = input("Select style: \n1. Pixelated\n2. Terminal")
 
-    former = Former()
+
+    former = Former(style=style_)
     former.pixelate_image(image_path=image_path)
      
 
